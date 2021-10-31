@@ -9,7 +9,7 @@ python WifiPasswordExtractor.py
 ```
 
 **you can also use a released version:**
-[latest release](https://github.com/RyanNorooz/WindowsSpotlightCollector/releases/latest)
+[latest release](https://github.com/RyanNorooz/Windows-WifiPassword-Extractor/releases/latest)
 
 Wifi passwords along with all device mac addresses will be saved in yaml format in the same directory.
 
