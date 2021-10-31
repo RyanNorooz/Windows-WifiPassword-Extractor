@@ -1,2 +1,9 @@
-Wifi-Passwords.json
+/venv
+
+/dist
+/build
+/__pycache__
+*.spec
+
+Wifi-Passwords.yaml
 MAC-Addresses.txt
