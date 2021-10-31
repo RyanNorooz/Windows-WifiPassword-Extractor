@@ -1,5 +1,6 @@
-import json
+import yaml
 import subprocess
+
 
 extracted = {}
 data = subprocess.check_output(["netsh", "wlan", "show", "profiles"]).decode("utf-8").split("\n")
@@ -11,10 +12,15 @@ for wifi in wifis:
     pw = pw[0] if pw else None
     extracted[wifi] = pw
 
-with open("Wifi-Passwords.json", 'w') as file:
-    file.write(json.dumps(extracted, sort_keys=True, indent=4))
+with open("Wifi-Passwords.yaml", 'w') as file:
+    yaml.dump(extracted, file, sort_keys=True, indent=4, encoding='utf-8')
 
-# =================================================================
 MAC = subprocess.check_output("ipconfig /all").decode("utf-8").replace("\r", '').replace("\n\n\n", '\n').strip()
 with open("MAC-Addresses.txt", "w") as file:
     file.write(MAC)
+
+print('''
+wrote 2 files:
+    Wifi-Passwords.yaml
+    MAC-Addresses.txt
+''')
